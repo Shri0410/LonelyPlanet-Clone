@@ -14,21 +14,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-        nav .head {
-            font-size: 1.1rem;
-            font-family: "Ubuntu", sans-serif;
-            font-weight: 900;
-            font-style: normal;
-        }
-
-        nav p a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-
-
-        }
-
         .vh {
             font-family: "Antonio", sans-serif;
             font-optical-sizing: auto;
@@ -52,6 +37,12 @@
             opacity: 100%;
             cursor: pointer;
         }
+
+        @media screen and (max-width:576px) {
+            .imghead .head {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -59,45 +50,137 @@
 
     <!-- Navbar -->
 
-    <nav class=" pb-2">
-        <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-center justify-content-between w-50">
-                <span class="head ps-4">
-                    <a style="text-decoration: none;" href="#">Lonely <i class="bi bi-globe-americas"></i> planet</a>
-                </span>
-                <p class="pt-3"> <a href="#">Destinations </a></p>
-                <p class="pt-3"> <a href="#">Planning </a></p>
-                <p class="pt-3"> <a href="#">Inspiration </a></p>
-                <p class="pt-3"> <a href="#">Shop </a></p>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-primary" href="#">Lonely <i class="bi bi-globe-americas"></i> planet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" aria-current="page" href="#">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" href="#">Planning</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" href="#">Inspiration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" href="#">Shop</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-2">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Search"
+                        aria-label="Search">
+                </form>
 
-            <div class="d-flex align-items-center justify-content-between" style="margin-left: 20rem; width: 18rem">
-                <div class="fw-bold d-flex pt-3">
-                    <a href="#" class="text-decoration-none d-flex text-dark">
-                        <i class="bi bi-search me-2"></i>
-                        <p> Search</p>
-                    </a>
+
+                <!-- Button trigger modal Login -->
+                <button type="button" class="btn btn-primary rounded-pill me-2" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
+                    Login
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="exampleModalLabel">Create Account</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp">
+                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                            else.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary rounded-pill">Login</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fw-bold d-flex pt-3">
-                    <a href="#" class="text-decoration-none d-flex text-dark">
-                        <i class="bi bi-bookmark me-2"></i>
-                        <p> Saves</p>
-                    </a>
+
+                <!-- Button trigger modal Sign Up -->
+                <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Sign Up
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="exampleModalLabel">Create Account</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp">
+                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                            else.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary rounded-pill">Create Account</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-primary rounded-pill">Sign in</button>
+
+
             </div>
         </div>
-
-
     </nav>
-
 
     <!-- Navbar -->
 
 
+
     <!-- main -->
-    <div class="mainimg d-flex w-100">
-        <div class="" style="position: relative;">
+    <div class="mainimg d-flex flex-wrap w-100 ">
+        <div style="position: relative;">
             <img src="https://lp-cms-production.imgix.net/2024-06/USA-Utah-Capitol-Reef-National-Park-ToTheHeightsPhoto-shutterstock-1712164543-RFC.jpg?w=1440&h=810&fit=crop&auto=format&q=75"
                 class="img-fluid  " style="width: 31.6rem; height: 100vh; object-fit: cover;" alt="...">
             <article class="w-100 text-light   d-flex justify-content-between" style="position: absolute; bottom: 0;">
@@ -133,43 +216,49 @@
     </div>
 
 
-    <div class="w-100 d-flex justify-content-between mb-5">
-        <div class="d-flex flex-column w-50 ps-4 justify-content-center py-4">
-
-            <h1 class="display-3 fw-bold " style="line-height: 2.5rem;">
-                <span style="font-size: 1rem; font-weight: 600;">Plan your Trip</span><br> Where to next?
-            </h1>
-        </div>
-
-        <div class="d-flex align-items-center pt-5">
-            <button type="button" class="btn btn-outline-primary rounded-pill text-dark fw-bold px-4 mt-5"
-                style="border: 1px solid black; font-size: 0.9rem;">View all
-                Destinations</button>
+    <div class="container-fluid">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <div class="d-flex flex-column justify-content-center py-4">
+                    <h1 class="display-3 fw-bold" style="line-height: 2.5rem;">
+                        <span style="font-size: 1rem; font-weight: 600;">Plan your Trip</span><br> Where to next?
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end">
+                <button type="button" class="btn btn-outline-primary rounded-pill text-dark fw-bold px-4 mt-5"
+                    style="border: 1px solid black; font-size: 0.9rem;">View all
+                    Destinations</button>
+            </div>
         </div>
     </div>
 
-    <div>
-        <div class="d-flex ">
-            <div class="mx-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <div class="mx-2 mx-md-4 mb-4">
                 <a href="#">
                     <img src="https://lp-cms-production.imgix.net/2022-03/iStock-902612974%20RFC.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75"
-                        class="img-fluid" style="height: 20rem ; object-fit: cover; border-radius: 1.2rem;" alt="...">
+                        class="img-fluid" style="height: 20rem; object-fit: cover; border-radius: 1.2rem;" alt="...">
                 </a>
-                <h4 class="fw-bold mt-3">Serifos</h4>
+                <h4 class="fw-bold mt-3 text-center">Serifos</h4>
             </div>
-            <div class="mx-3">
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="mx-2 mx-md-4 mb-4">
                 <a href="#">
                     <img src="https://lp-cms-production.imgix.net/2022-12/Stocksy_txp95a12c14B4D300_Medium_3707865.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75"
-                        class="img-fluid" style="height: 20rem ; object-fit: cover; border-radius: 1.2rem;" alt="...">
+                        class="img-fluid" style="height: 20rem; object-fit: cover; border-radius: 1.2rem;" alt="...">
                 </a>
-                <h4 class="fw-bold mt-3">Costa Rica</h4>
+                <h4 class="fw-bold mt-3 text-center">Costa Rica</h4>
             </div>
-            <div class="mx-3">
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="mx-2 mx-md-4 mb-4">
                 <a href="#">
                     <img src="https://lp-cms-production.imgix.net/2019-06/110119762_full.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75"
-                        class="img-fluid" style="height: 20rem ; object-fit: cover; border-radius: 1.2rem;" alt="...">
+                        class="img-fluid" style="height: 20rem; object-fit: cover; border-radius: 1.2rem;" alt="...">
                 </a>
-                <h4 class="fw-bold mt-3">Lyon</h4>
+                <h4 class="fw-bold mt-3 text-center">Lyon</h4>
             </div>
         </div>
     </div>
@@ -181,7 +270,7 @@
             Your browser does not support HTML5 video.
         </video>
         <div style="position: absolute; top: 5;">
-            <h1 class="vh display-1">BEST IN TRAVEL 2024</h1>
+            <h1 class="vh display-1 text-center">BEST IN TRAVEL 2024</h1>
             <div class="w-100 d-flex justify-content-center">
                 <button type="button" class="btn btn-outline-primary rounded-pill text-dark fw-bold bg-light "
                     style="font-size: 0.9rem;">View all
@@ -191,73 +280,72 @@
     </div>
 
     <section class="w-100 bg-primary ">
-        <div class="w-100 d-flex align-items-center py-5">
-            <div class="w-50 text-light ps-3 pt-4 ">
+
+        <div class="row align-items-center py-5">
+            <div class="col-md-6 text-light ps-3 pt-4">
                 <h1 class="display-4 fw-bold">#lonelyplanet</h1>
             </div>
-            <div class="w-50 d-flex justify-content-end pe-4 text-light pt-4">
-                <h5>FOLLOW LONELY PLANET:<i class="bi bi-facebook px-1"></i><i class="bi bi-instagram px-1"></i>
-                    <i class="bi bi-twitter-x px-1"></i><i class="bi bi-tiktok px-1"></i>
+            <div class="col-md-6 d-flex justify-content-end pe-4 text-light pt-4">
+                <h5 class="Follow">FOLLOW LONELY PLANET:
+                    <i class="bi bi-facebook px-1"></i>
+                    <i class="bi bi-instagram px-1"></i>
+                    <i class="bi bi-twitter-x px-1"></i>
+                    <i class="bi bi-tiktok px-1"></i>
                 </h5>
             </div>
         </div>
 
-        <div class="sm w-100 pb-5 d-flex">
-            <div class="mb-5">
+        <div class="sm row row-cols-1 row-cols-sm-2 row-cols-md-3 pb-5">
+            <div class=" mb-4">
                 <a href="#">
-                    <img src="https://rukminim2.flixcart.com/image/850/1000/kgsb1jk0-0/poster/n/h/y/medium-twfnp2-beautiful-waterfall-nature-view-large-size-high-original-imafwy37qv2b5g3v.jpeg?q=90&crop=false"
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+                    <img src="https://assets.hongkiat.com/uploads/nature-photography/autumn-poolside.jpg"
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
-            <div class="mb-5">
+            <div class=" mb-4">
                 <a href="#">
                     <img src="https://media.istockphoto.com/id/1672317574/photo/ama-dablam-mountain-peak.webp?b=1&s=170667a&w=0&k=20&c=Ea8yDEHpUemrRuMZUKGPDBE11YTWVksIupMN8FkEBf8="
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
-            <div class="mb-5">
+            <div class=" mb-4">
                 <a href="#">
-                    <img src="https://media.istockphoto.com/id/173598452/photo/university-in-autumn.jpg?s=612x612&w=0&k=20&c=jQqpZuTZ6qXIfWqnCW5nqlExJZO0PO47L-ZiaE8jIk0="
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+                    <img src="https://www.usnews.com/object/image/00000189-30bd-d6f6-a99b-ffbd1f840000/gettyimages-1478520911.jpg?update-time=1688739913761&size=responsive640"
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
-            <div class="mb-5">
+            <div class=" mb-4">
                 <a href="#">
                     <img src="https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?cs=srgb&dl=pexels-saikat-ghosh-323099-914128.jpg&fm=jpg"
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
-            <div class="mb-5">
+            <div class=" mb-4">
                 <a href="#">
                     <img src="https://media.istockphoto.com/id/177716106/photo/beautiful-rock.jpg?s=612x612&w=0&k=20&c=DcpiHYjNwXSH0L6pu2WaqfcrdcrgCNPw-yq5r-1ACAY="
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
-            <div class="mb-5">
+            <div class=" mb-4">
                 <a href="#">
-                    <img src="https://media.architecturaldigest.com/photos/64d3b62a35c3f404ca2efa62/16:9/w_2992,h_1683,c_limit/GettyImages-1319377120.jpg"
-                        class="img-fluid" style="height: 18rem ; width: 17rem; object-fit: cover;" alt="...">
+
+                    <img src="https://media.istockphoto.com/id/173598452/photo/university-in-autumn.jpg?s=612x612&w=0&k=20&c=jQqpZuTZ6qXIfWqnCW5nqlExJZO0PO47L-ZiaE8jIk0="
+                        class="img-fluid rounded" alt="...">
                 </a>
             </div>
-
         </div>
-
 
     </section>
 
-    <section class="w-100 " style="position: relative;">
+    <section class="imghead w-100 " style="position: relative;">
         <img src="img.jpeg" class="img-fluid" alt="">
-        <div style="position: absolute; top: 0; color: white;" class="pt-4 ps-5">
+        <div style="position: absolute; top: 0; color: white;" class="head pt-4 ps-5">
             <p>Shop Our Book</p>
             <h1 class="display-4 fw-bold">Our<br> guidebooks<br> & travel<br> books</h1>
             <p>Whether you’re interested in traveling to a new city,<br> going on a cruise, or cooking a new dish —
                 we’re<br>
-                committed to inspiring you to experience travel in a <br>whole new way. Lonely Planet’s collection of
+                committed to inspiring you to experience travel in a <br>whole new way. Lonely Planet’s collection
+                of
                 825+<br>
                 travel and guidebooks is sure to inspire the traveler<br> within.</p>
             <button type="button" class="btn btn-outline-light rounded-pill px-3">View All Books</button>
@@ -270,8 +358,8 @@
     <!-- main -->
 
     <!-- footer -->
-    <footer class="row row-cols-5 py-5 my-5 border-top w-100 ">
-        <div class="col w-25 ms-5">
+    <footer class="d-flex flex-wrap justify-content-around py-5 my-5 border-top w-100 ">
+        <div class=" w-25 ">
             <div>
                 <h2 class="text-primary fw-bold">lonely planet</h2>
                 <p class="fw-bold">For Explore Everywhere</p>
@@ -297,7 +385,7 @@
 
         </div> -->
 
-        <div class="col ">
+        <div class=" ">
             <h5>TOP DESTINATIONS</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">New York City</a></li>
@@ -315,12 +403,13 @@
             </ul>
         </div>
 
-        <div class="col ">
+        <div class=" ">
             <h5>TRAVEL INTERESTS</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Adventure Travel</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Art and Culture</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Beaches, Coasts and Islands</a>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Beaches, Coasts and
+                        Islands</a>
                 </li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Family Holidays</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Festivals</a></li>
@@ -330,7 +419,7 @@
             </ul>
         </div>
 
-        <div class="col ">
+        <div class=" ">
             <h5>SHOP</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Destination Guides</a></li>
